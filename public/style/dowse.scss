@@ -1,13 +1,26 @@
 $teal: #429cb2;
 $pink: #ff86b1;
 $malibu: #78e4ff;
-$text-size: 15px;
+$dark-teal: #0d353f;
+$gray: #5c6b7e;
+$text-size: 14px;
+$light-blue: #f1fcff;
 $screen-lg-min: 1200px;
 $screen-md-min: 992px;
 $screen-sm-min: 768px;
 
+.vertical-align {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
 body{
 	font-size: $text-size;
+	font-family: 'Open Sans', sans-serif;
+	color: $gray;
 }
 header{
 	.project-name {
@@ -16,6 +29,47 @@ header{
   	font-size: 7em;
 	}
 }
+
+.strong{
+	color: $dark-teal;
+	font-weight: 700;
+	font-size: 1.2em;
+}
+
+.dollar-sign{
+	top: -1.4em;
+	position: relative;
+}
+
+.super-strong{
+	color: $teal;
+	font-weight: 300;
+	font-size: 3em;
+	margin: 0 0.1em;
+}
+
+.unit{
+	position: relative;
+}
+
+ul.studios{
+	padding: 0;
+	list-style: none;
+	li{
+		.profile-photo{
+			background: url("../images/studio-placeholder.png") no-repeat;
+			background-size: 12.5em;
+			height: 7em;
+		}
+		padding: 2em 0;
+		border-bottom: 1px solid #efefef;
+		&:hover{
+			background-color: $light-blue;
+		}
+	}
+}
+
+
 
 .dropdown {
   ///////////////////////////////////////////////////////////////////////////////////

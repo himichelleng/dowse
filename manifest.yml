@@ -1,6 +1,6 @@
 applications:
 - services:
-  - dowse-cloudantNoSQLDB
+  - Cloudant NoSQL DB-b1
   - dowse-MonitoringAndAnalytics
   disk_quota: 1024M
   host: dowse

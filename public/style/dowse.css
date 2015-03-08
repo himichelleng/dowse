@@ -1,10 +1,50 @@
+.vertical-align {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%); }
+
 body {
-  font-size: 15px; }
+  font-size: 14px;
+  font-family: 'Open Sans', sans-serif;
+  color: #5c6b7e; }
 
 header .project-name {
   font-family: "cosmopolitan",serif;
   color: #429cb2;
   font-size: 7em; }
+
+.strong {
+  color: #0d353f;
+  font-weight: 700;
+  font-size: 1.2em; }
+
+.dollar-sign {
+  top: -1.4em;
+  position: relative; }
+
+.super-strong {
+  color: #429cb2;
+  font-weight: 300;
+  font-size: 3em;
+  margin: 0 0.1em; }
+
+.unit {
+  position: relative; }
+
+ul.studios {
+  padding: 0;
+  list-style: none; }
+  ul.studios li {
+    padding: 2em 0;
+    border-bottom: 1px solid #efefef; }
+    ul.studios li .profile-photo {
+      background: url("../images/studio-placeholder.png") no-repeat;
+      background-size: 12.5em;
+      height: 7em; }
+    ul.studios li:hover {
+      background-color: #f1fcff; }
 
 .dropdown {
   line-height: 1.5em; }
