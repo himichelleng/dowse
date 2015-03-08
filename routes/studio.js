@@ -13,7 +13,7 @@ exports.list = function(req, res){
 	  		if(location.toLowerCase().indexOf("area") != -1){
 	  			studios.push(studio);
 	  		}else{
-	  			if(studio.location.toLowerCase().indexOf(location) != -1){
+	  			if(studio.location.toLowerCase().indexOf(location.toLowerCase()) != -1){
 	  				studios.push(studio);
 	  			}
 	  		}
