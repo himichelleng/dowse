@@ -24,6 +24,9 @@ header .project-name {
   top: -1.4em;
   position: relative; }
 
+input.selected-studio-location {
+  display: none; }
+
 .super-strong {
   color: #429cb2;
   font-weight: 300;
@@ -32,6 +35,13 @@ header .project-name {
 
 .unit {
   position: relative; }
+
+.find-studios {
+  display: none;
+  width: 10em;
+  margin-top: 4em;
+  background-color: #429cb2;
+  border-color: #429cb2; }
 
 ul.studios {
   padding: 0;
@@ -47,7 +57,8 @@ ul.studios {
       background-color: #f1fcff; }
 
 .dropdown {
-  line-height: 1.5em; }
+  line-height: 1.5em;
+  margin-top: 3em; }
   .dropdown ul {
     padding: 0;
     margin: 0; }
@@ -59,20 +70,21 @@ ul.studios {
     text-align: center; }
   .dropdown .dropdown-description {
     background: white;
+    display: inline;
     color: #999999;
-    float: left;
-    font-size: 0.7em;
+    font-size: 1em;
     line-height: 40px;
     margin: 0;
-    padding: 0 0.5em 0 1em; }
+    padding: 0 0.5em 0 1em;
+    font-weight: 300; }
     @media (min-width: 1200px) {
       .dropdown .dropdown-description {
-        font-size: 1em; } }
+        font-size: 1.3em; } }
   .dropdown .dropdown-button {
     background: white;
     cursor: pointer;
-    float: right;
-    font-size: 0.7em;
+    display: inline;
+    font-size: 1em;
     font-weight: 800;
     line-height: 40px;
     margin: 0;
@@ -80,18 +92,19 @@ ul.studios {
     position: relative; }
     @media (min-width: 1200px) {
       .dropdown .dropdown-button {
-        font-size: 1em;
+        font-size: 1.3em;
         padding: 0 2.5em 0 0.5em; } }
   .dropdown .dropdown-button:hover {
     background-color: #f7f7f7; }
   .dropdown .dropdown-button:after {
     color: #333;
     content: "\25BE";
-    display: block;
-    position: absolute;
-    right: 1em;
-    top: 0; }
+    display: inline;
+    position: relative;
+    left: 1em; }
   .dropdown .dropdown-menu {
+    margin: 0;
+    padding: 0;
     -webkit-transition: all 0.2s ease-in-out;
     /* For Safari 3.1 to 6.0 */
     transition: all 0.2s ease-in-out;
@@ -104,10 +117,11 @@ ul.studios {
     display: none;
     overflow: show;
     position: absolute;
-    right: 0;
+    right: 2.9em;
     top: 50px;
     width: 228px;
-    z-index: 99999; }
+    z-index: 99999;
+    left: auto; }
     .dropdown .dropdown-menu:before {
       position: absolute;
       right: 1em;

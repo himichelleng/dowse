@@ -6,6 +6,9 @@ $(document).ready(function(){
     });
     $(".dropdown-menu.dropdown-select > li").click(function() {
       $(".dropdown-button").html($(this).html());
+      console.log($(this).html());
+      $("input[name='studioLocation']").val($(this).html());
+      $(".find-studios").addClass("show");
     });
   });
 });

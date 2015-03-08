@@ -41,6 +41,10 @@ header{
 	position: relative;
 }
 
+input.selected-studio-location{
+	display: none;
+}
+
 .super-strong{
 	color: $teal;
 	font-weight: 300;
@@ -50,6 +54,14 @@ header{
 
 .unit{
 	position: relative;
+}
+
+.find-studios{
+	display: none;
+	width: 10em;
+	margin-top: 4em;
+	background-color: $teal;
+	border-color: $teal;
 }
 
 ul.studios{
@@ -82,7 +94,7 @@ ul.studios{
   $base-font-color: $dark-gray !default;
   
   line-height: $base-line-height;
-
+	margin-top: 3em;
   ul {
     padding: 0;
     margin: 0;
@@ -112,33 +124,23 @@ ul.studios{
 
   .dropdown-description {
     background: $dropdown-background;
-    // border-bottom-left-radius: $base-border-radius;
-    // border-bottom: $dropdown-border;
-    // border-left: $dropdown-border;
-    // border-top-left-radius: $base-border-radius;
-    // border-top: $dropdown-border;
+    display: inline;
     color: $dropdown-description-color;
-    float: left;
-    font-size: 0.7em;
+    font-size: 1em;
     line-height: $dropdown-height;
     margin: 0;
     padding: 0 ($dropdown-padding / 2) 0 $dropdown-padding;
-
+		font-weight: 300;
     @media (min-width: $screen-lg-min) {
-      font-size: 1em;
+      font-size: 1.3em;
     }
   }
 
   .dropdown-button {
     background: $dropdown-background;
-    // border-bottom-right-radius: $base-border-radius;
-    // border-top-right-radius: $base-border-radius;
-    // border-top: $dropdown-border;
-    // border-right: $dropdown-border;
-    // border-bottom: $dropdown-border;
     cursor: pointer;
-    float: right;
-    font-size: 0.7em;
+    display: inline;
+    font-size: 1em;
     font-weight: 800;
     line-height: $dropdown-height;
     margin: 0;
@@ -146,7 +148,7 @@ ul.studios{
     position: relative;
 
     @media (min-width: $screen-lg-min) {
-      font-size: 1em;
+      font-size: 1.3em;
       padding: 0 ($dropdown-padding * 2.5) 0 ($dropdown-padding / 2);
     }
   }
@@ -158,13 +160,14 @@ ul.studios{
   .dropdown-button:after {
     color: $base-font-color;
     content: "\25BE";
-    display: block;
-    position: absolute;
-    right: $dropdown-padding;
-    top: $dropdown-arrow-top-distance;
+    display: inline;
+    position: relative;
+    left: $dropdown-padding;
   }
 
   .dropdown-menu {
+  	margin: 0;
+  	padding: 0;
   	-webkit-transition: all 0.2s ease-in-out; /* For Safari 3.1 to 6.0 */
   	transition: all 0.2s ease-in-out;
     background: $dropdown-background;
@@ -176,11 +179,11 @@ ul.studios{
     display: none;
     overflow: show;
     position: absolute;
-    right: 0;
+    right: 2.9em;
     top: $dropdown-distance-from-menu;
     width: 228px;
     z-index: 99999;
-
+		left: auto;
     &:before {
       position: absolute;
       right: 1em;

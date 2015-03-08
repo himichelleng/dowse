@@ -69,7 +69,9 @@ app.get('/', function (req, res) {
   res.render('index', { title: 'Hey', message: 'Hello there!'});
 });
 
-app.get('/studio', studio.list);
+app.post('/studio', function(req, res){
+	studio.list(req, res);
+});
 
 // app.get('/studios/:id', function(req, res){
 // 	var location = req.query.location;

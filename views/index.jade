@@ -16,15 +16,18 @@ html
     header
       h1.project-name Dowse
     div.container
-      div.dropdown.row
-        div.dropdown-container.col-xs-12.col-md-6.col-md-offset-3
-          p.dropdown-description I'm looking for a recording studio in
-          p.dropdown-button Click to Select
-          ul.dropdown-menu.dropdown-select
-            li Manhattan
-            li Brooklyn
-            li Long Island
-          a.btn.btn-primary(href="/studio") Find
+      form(action="/studio", method="post" name="studio")
+        div.dropdown.row
+          div.dropdown-container.col-xs-12.col-md-6.col-md-offset-3
+            p.dropdown-description I'm looking for a recording studio in
+            p.dropdown-button Click to Select
+            ul.dropdown-menu.dropdown-select
+              li NYC area
+              li Manhattan
+              li Brooklyn
+              li Long Island
+            input.selected-studio-location(type='text', name='studioLocation')
+            input.btn.btn-primary.find-studios.center-block(type="submit", value="Find")
     script(src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js")
     script(src="/scripts/util.js")
     script(src="/scripts/index.js")
