@@ -6,6 +6,7 @@
   transform: translateY(-50%); }
 
 body {
+  height: 100%;
   font-size: 14px;
   font-family: 'Open Sans', sans-serif;
   color: #5c6b7e; }
@@ -55,6 +56,26 @@ ul.studios {
       height: 7em; }
     ul.studios li:hover {
       background-color: #f1fcff; }
+
+footer {
+  background-color: #0d353f; }
+  footer .row > div {
+    margin-top: 0.4em;
+    margin-bottom: 0.4em; }
+  footer ul {
+    list-style: none; }
+    footer ul li {
+      position: relative; }
+      footer ul li a {
+        display: block;
+        width: 2em;
+        height: 2em;
+        background: white;
+        border-radius: 2em; }
+      footer ul li .fa {
+        position: relative;
+        top: 0.5em;
+        color: #0d353f; }
 
 .dropdown {
   line-height: 1.5em;

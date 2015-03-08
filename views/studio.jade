@@ -12,6 +12,7 @@ html
     link(rel="stylesheet" href="/style/style.css")
     link(href="/style/dowse.css" rel="stylesheet")
     link(href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css')
+    link(rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css")
   body
     div.container
       div.pull-right
@@ -37,5 +38,13 @@ html
                     span.unit /hr
                 - if (studio.extra)
                   p * #{studio.extra}
-        
+    footer
+      div.container
+        div.row
+          div.col-xs-12.col-md-6 © Dowse 2015. For musicians, made by a fellow musician.
+          div.col-xs-12.col-md-6
+            ul.footer-social
+              li
+                a.pull-right(href="https://www.facebook.com/pages/Korrous/287164331437248" target="_blank")
+                  span.fa.fa-facebook
                   
