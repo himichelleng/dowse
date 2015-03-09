@@ -1,12 +1,9 @@
 applications:
-- services:
-  - Cloudant NoSQL DB-b1
-  - dowse-MonitoringAndAnalytics
-  disk_quota: 1024M
+- disk_quota: 1024M
   host: dowse
   name: dowse
   command: node app.js
   path: .
-  domain: mybluemix.net
+  domain: eu-gb.mybluemix.net
   instances: 1
   memory: 512M

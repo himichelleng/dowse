@@ -3,7 +3,7 @@ $pink: #ff86b1;
 $malibu: #78e4ff;
 $dark-teal: #0d353f;
 $gray: #5c6b7e;
-$text-size: 14px;
+$text-size: 15px;
 $light-blue: #f1fcff;
 $screen-lg-min: 1200px;
 $screen-md-min: 992px;
@@ -23,12 +23,29 @@ body{
 	font-family: 'Open Sans', sans-serif;
 	color: $gray;
 }
+
+.wrapper{
+  min-height: 100%;
+  position:relative;
+}
 header{
 	.project-name {
   	font-family: "cosmopolitan",serif;
   	color: $teal;
   	font-size: 7em;
 	}
+  @media (min-width: $screen-lg-min) {
+    margin-top: 6em;
+    margin-bottom: 3em;
+  }
+}
+
+h1{
+  font-weight: 300;
+}
+
+.highlight{
+  color: $teal;
 }
 
 .strong{
@@ -60,18 +77,43 @@ input.selected-studio-location{
 .find-studios{
 	display: none;
 	width: 10em;
-	margin-top: 4em;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  @media (min-width: $screen-lg-min) {
+	 margin-top: 4em;
+  }
 	background-color: $teal;
 	border-color: $teal;
 }
 
+.budget-option{
+	display: none;
+}
+
+input.budget{
+  border: none;
+  border-bottom: 1px solid $malibu;
+  font-size: 1.5em;
+  color: $teal;
+  padding-left: 0.5em;
+  font-weight: 300;
+}
+
 ul.studios{
+  margin-top: 1em;
+  @media (min-width: $screen-lg-min) {
+    margin-top: 3em;
+  }
 	padding: 0;
 	list-style: none;
 	li{
 		.profile-photo{
-			background: url("../images/studio-placeholder.png") no-repeat;
-			background-size: 12.5em;
+      img{
+        width: auto;
+        height: 100%;
+        margin: 0 auto;
+        display: block;
+      }
 			height: 7em;
 		}
 		padding: 2em 0;
@@ -82,13 +124,22 @@ ul.studios{
 	}
 }
 
+.page{
+  padding-bottom:5em;
+}
+
 footer{
 	background-color: $dark-teal;
+  width:100%;
+  position:absolute;
+  bottom:0;
+  left:0;
+  text-align: left;
 	.row > div{
 		margin-top: 0.4em;
 		margin-bottom: 0.4em;
 	}
-	ul {
+	ul.footer-social {
 		list-style: none;
 	  li {
 	  	position: relative;
@@ -98,6 +149,7 @@ footer{
 	   		height: 2em;
 	   		background: white;
 	   		border-radius: 2em;
+        text-align: center;
 	   	}
 	   	.fa{
 	   		position: relative;
@@ -108,6 +160,19 @@ footer{
 	}
 }
 
+@media (min-width: $screen-lg-min) {
+  .studio-option{
+    .dropdown-menu{
+      right: 2.9em;
+    }
+  }
+
+  .budget-option{
+    .dropdown-menu{
+      right: 2.9em;
+    }
+  }
+}
 
 .dropdown {
   ///////////////////////////////////////////////////////////////////////////////////
@@ -120,7 +185,7 @@ footer{
   $base-font-color: $dark-gray !default;
   
   line-height: $base-line-height;
-	margin-top: 3em;
+
   ul {
     padding: 0;
     margin: 0;
@@ -147,7 +212,11 @@ footer{
     position: relative;
     text-align: center;
   }
-
+  
+  .dropdown-block{
+    display: inline;
+    position: relative;
+  }
   .dropdown-description {
     background: $dropdown-background;
     display: inline;
@@ -167,15 +236,15 @@ footer{
     cursor: pointer;
     display: inline;
     font-size: 1em;
-    font-weight: 800;
+    font-weight: 300;
     line-height: $dropdown-height;
     margin: 0;
-    padding: 0 ($dropdown-padding * 2.5) 0 ($dropdown-padding / 2);
+    padding: 0 ($dropdown-padding * 1) 0 0;
     position: relative;
-
+    color: $teal;
     @media (min-width: $screen-lg-min) {
       font-size: 1.3em;
-      padding: 0 ($dropdown-padding * 2.5) 0 ($dropdown-padding / 2);
+      padding: 0 ($dropdown-padding * 1) 0 0;
     }
   }
 
@@ -205,7 +274,6 @@ footer{
     display: none;
     overflow: show;
     position: absolute;
-    right: 2.9em;
     top: $dropdown-distance-from-menu;
     width: 228px;
     z-index: 99999;

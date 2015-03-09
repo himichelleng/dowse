@@ -5,21 +5,24 @@ var $ = require('jquery');
 
 exports.list = function(req, res){
 	var studios = [],
-		location = req.body.studioLocation;;
+		location = req.body.studioLocation,
+		budget = req.body.budget;
+	console.log(location, budget);
 	db.list({include_docs: true}, function(err, data) {
 	  if (!err) {
 	  	data.rows.forEach(function(doc) {
 	  		var studio = doc.doc;
-	  		if(location.toLowerCase().indexOf("area") != -1){
+	  		if(location.toLowerCase().indexOf("all") != -1 && (!budget ||parseInt(studio.price) <= budget)){
+	  			// console.log(studio.price, budget);
 	  			studios.push(studio);
 	  		}else{
-	  			if(studio.location.toLowerCase().indexOf(location.toLowerCase()) != -1){
+	  			if(studio.location && studio.location.toLowerCase().indexOf(location.toLowerCase()) != -1){
 	  				studios.push(studio);
 	  			}
 	  		}
 	  	});
 	  }
-    res.render('studio', { location: location, studios: studios });
+    res.render('studio', { location: location, studios: studios, budget: budget});
 	});
 
 };

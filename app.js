@@ -37,9 +37,15 @@ if ('development' == app.get('env')) {
 function initDBConnection() {
 	dbCredentials.host = "a12f00f3-b761-4132-8873-73cfe07030b1-bluemix.cloudant.com";
 	dbCredentials.port = 443;
-	dbCredentials.user = "a12f00f3-b761-4132-8873-73cfe07030b1-bluemix";
-	dbCredentials.password = "5eeef0a18c9e683959124e313b6ec9ce9facd31f539de9ad19d9c241c2d56e45";
-	dbCredentials.url = "https://a12f00f3-b761-4132-8873-73cfe07030b1-bluemix:5eeef0a18c9e683959124e313b6ec9ce9facd31f539de9ad19d9c241c2d56e45@a12f00f3-b761-4132-8873-73cfe07030b1-bluemix.cloudant.com";
+	dbCredentials.user = "5e46515f-9d4c-47bd-921c-42c43bd062c1-bluemix";
+	dbCredentials.password = "263b48931d085203288e19a801df144a749c67ca2b6839cd1533d7d09a8565af";
+	dbCredentials.url = "https://5e46515f-9d4c-47bd-921c-42c43bd062c1-bluemix:263b48931d085203288e19a801df144a749c67ca2b6839cd1533d7d09a8565af@5e46515f-9d4c-47bd-921c-42c43bd062c1-bluemix.cloudant.com";
+
+	// dbCredentials.host = "a12f00f3-b761-4132-8873-73cfe07030b1-bluemix.cloudant.com";
+	// dbCredentials.port = 443;
+	// dbCredentials.user = "a12f00f3-b761-4132-8873-73cfe07030b1-bluemix";
+	// dbCredentials.password = "5eeef0a18c9e683959124e313b6ec9ce9facd31f539de9ad19d9c241c2d56e45";
+	// dbCredentials.url = "https://a12f00f3-b761-4132-8873-73cfe07030b1-bluemix:5eeef0a18c9e683959124e313b6ec9ce9facd31f539de9ad19d9c241c2d56e45@a12f00f3-b761-4132-8873-73cfe07030b1-bluemix.cloudant.com";
 
 	if(process.env.VCAP_SERVICES) {
 		var vcapServices = JSON.parse(process.env.VCAP_SERVICES);
@@ -72,13 +78,6 @@ app.get('/', function (req, res) {
 app.post('/studio', function(req, res){
 	studio.list(req, res);
 });
-
-// app.get('/studios/:id', function(req, res){
-// 	var location = req.query.location;
-// 	res.render("studios", {
-// 		location: location
-// 	});
-// });
 
 http.createServer(app).listen(app.get('port'), function() {
 	console.log('Express server listening on port ' + app.get('port'));

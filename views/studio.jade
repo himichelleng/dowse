@@ -1,6 +1,6 @@
 html
   head
-    title=title
+    title Dowse
     meta(http-equiv="Content-Type" content="text/html; charset=utf-8")
     meta(name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no")
     meta(name="apple-mobile-web-app-capable" content="yes")
@@ -14,37 +14,50 @@ html
     link(href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css')
     link(rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css")
   body
-    div.container
-      div.pull-right
-        a(href="/") Return to home page
-      div.page-header
-        h1 Studios in #{location}
-        ul.studios
-          each studio in studios
-            li.row
-              div.col-xs-12.col-md-2.profile-photo
-              div.col-xs-12.col-md-3
-                a(href="#{studio.web}" target="_blank").strong #{studio.name}
-              div.col-xs-12.col-md-4
-                p #{studio.address}
-                a(href="tel:"+studio.phone) #{studio.phone}
-              div.col-xs-12.col-md-3
-                - if(!studio.price)
-                  p Please call for rate
-                - else
-                  p 
-                    span.dollar-sign $
-                    span.super-strong #{studio.price}
-                    span.unit /hr
-                - if (studio.extra)
-                  p * #{studio.extra}
-    footer
-      div.container
-        div.row
-          div.col-xs-12.col-md-6 © Dowse 2015. For musicians, made by a fellow musician.
-          div.col-xs-12.col-md-6
-            ul.footer-social
-              li
-                a.pull-right(href="https://www.facebook.com/pages/Korrous/287164331437248" target="_blank")
-                  span.fa.fa-facebook
+    .wrapper
+      div.container.page
+        div.pull-right
+          a(href="/") Return to home page
+        div.page-header
+          h1 #{studios.length} studios in 
+            span.highlight #{location} 
+            if(budget)
+              span under 
+              span.highlight $#{budget}
+          ul.studios
+            each studio in studios
+              li.row
+                div.col-xs-12.col-md-2.profile-photo
+                  - if (studio.logo)
+                    a(href="#{studio.web}" target="_blank")
+                      img(src="#{studio.logo}")
+                  - else
+                    img(src="images/studio-placeholder.png")
+                div.col-xs-12.col-md-3
+                  a(href="#{studio.web}" target="_blank").strong #{studio.name}
+                div.col-xs-12.col-md-4
+                  p #{studio.address}
+                  a(href="tel:"+studio.phone) #{studio.phone}
+                div.col-xs-12.col-md-3
+                  //- p #{studio._id}
+                  - if(!studio.price)
+                    p Please call for rate
+                  - else
+                    p 
+                      span.dollar-sign $
+                      span.super-strong #{studio.price}
+                      span.unit /hr
+                  - if (studio.extra)
+                    p * #{studio.extra}
+                  - if (studio.hoursMin)
+                    p * Must book minimum #{studio.hoursMin} hours
+      footer
+        div.container
+          div.row
+            div.col-xs-12.col-md-6 © Korrous 2015. For musicians, by a musician.
+            div.col-xs-12.col-md-6
+              ul.footer-social
+                li
+                  a.pull-right(href="https://www.facebook.com/pages/Korrous/287164331437248" target="_blank")
+                    span.fa.fa-facebook
                   

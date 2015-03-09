@@ -7,14 +7,28 @@
 
 body {
   height: 100%;
-  font-size: 14px;
+  font-size: 15px;
   font-family: 'Open Sans', sans-serif;
   color: #5c6b7e; }
+
+.wrapper {
+  min-height: 100%;
+  position: relative; }
 
 header .project-name {
   font-family: "cosmopolitan",serif;
   color: #429cb2;
   font-size: 7em; }
+@media (min-width: 1200px) {
+  header {
+    margin-top: 6em;
+    margin-bottom: 3em; } }
+
+h1 {
+  font-weight: 300; }
+
+.highlight {
+  color: #429cb2; }
 
 .strong {
   color: #0d353f;
@@ -40,46 +54,82 @@ input.selected-studio-location {
 .find-studios {
   display: none;
   width: 10em;
-  margin-top: 4em;
+  margin-top: 2em;
+  margin-bottom: 2em;
   background-color: #429cb2;
   border-color: #429cb2; }
+  @media (min-width: 1200px) {
+    .find-studios {
+      margin-top: 4em; } }
+
+.budget-option {
+  display: none; }
+
+input.budget {
+  border: none;
+  border-bottom: 1px solid #78e4ff;
+  font-size: 1.5em;
+  color: #429cb2;
+  padding-left: 0.5em;
+  font-weight: 300; }
 
 ul.studios {
+  margin-top: 1em;
   padding: 0;
   list-style: none; }
+  @media (min-width: 1200px) {
+    ul.studios {
+      margin-top: 3em; } }
   ul.studios li {
     padding: 2em 0;
     border-bottom: 1px solid #efefef; }
     ul.studios li .profile-photo {
-      background: url("../images/studio-placeholder.png") no-repeat;
-      background-size: 12.5em;
       height: 7em; }
+      ul.studios li .profile-photo img {
+        width: auto;
+        height: 100%;
+        margin: 0 auto;
+        display: block; }
     ul.studios li:hover {
       background-color: #f1fcff; }
 
+.page {
+  padding-bottom: 5em; }
+
 footer {
-  background-color: #0d353f; }
+  background-color: #0d353f;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  text-align: left; }
   footer .row > div {
     margin-top: 0.4em;
     margin-bottom: 0.4em; }
-  footer ul {
+  footer ul.footer-social {
     list-style: none; }
-    footer ul li {
+    footer ul.footer-social li {
       position: relative; }
-      footer ul li a {
+      footer ul.footer-social li a {
         display: block;
         width: 2em;
         height: 2em;
         background: white;
-        border-radius: 2em; }
-      footer ul li .fa {
+        border-radius: 2em;
+        text-align: center; }
+      footer ul.footer-social li .fa {
         position: relative;
         top: 0.5em;
         color: #0d353f; }
 
+@media (min-width: 1200px) {
+  .studio-option .dropdown-menu {
+    right: 2.9em; }
+
+  .budget-option .dropdown-menu {
+    right: 2.9em; } }
 .dropdown {
-  line-height: 1.5em;
-  margin-top: 3em; }
+  line-height: 1.5em; }
   .dropdown ul {
     padding: 0;
     margin: 0; }
@@ -89,6 +139,9 @@ footer {
     display: inline-block;
     position: relative;
     text-align: center; }
+  .dropdown .dropdown-block {
+    display: inline;
+    position: relative; }
   .dropdown .dropdown-description {
     background: white;
     display: inline;
@@ -106,15 +159,16 @@ footer {
     cursor: pointer;
     display: inline;
     font-size: 1em;
-    font-weight: 800;
+    font-weight: 300;
     line-height: 40px;
     margin: 0;
-    padding: 0 2.5em 0 0.5em;
-    position: relative; }
+    padding: 0 1em 0 0;
+    position: relative;
+    color: #429cb2; }
     @media (min-width: 1200px) {
       .dropdown .dropdown-button {
         font-size: 1.3em;
-        padding: 0 2.5em 0 0.5em; } }
+        padding: 0 1em 0 0; } }
   .dropdown .dropdown-button:hover {
     background-color: #f7f7f7; }
   .dropdown .dropdown-button:after {
@@ -138,7 +192,6 @@ footer {
     display: none;
     overflow: show;
     position: absolute;
-    right: 2.9em;
     top: 50px;
     width: 228px;
     z-index: 99999;
